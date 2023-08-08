@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       translations: Languages(),
-      locale: const Locale("hn_IN"),
-      fallbackLocale: const Locale("hn_IN"),
+      locale: const Locale("en_US"),
+      fallbackLocale: const Locale("en_US"),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

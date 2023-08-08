@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_mvvm/utils/utils.dart';
+import '../view_models/services/splash_services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -10,16 +10,23 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashServices services = SplashServices();
+  @override
+  void initState() {
+    services.isLogin();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Hello".tr),
+      backgroundColor: Colors.teal,
+      body: Center(
+        child: Text(
+          "welcome".tr,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        ),
       ),
-      backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        Utils.toastMessage("${"Hello".tr}\n${"How are you?".tr}");
-      }),
     );
   }
 }
